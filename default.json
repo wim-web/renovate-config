@@ -2,11 +2,11 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "config:base",
-        "github>aquaproj/aqua-renovate-config"
+        "github>aquaproj/aqua-renovate-config#1.1.0"
     ],
     "schedule": [
         "* 21-23 * * fri",
-        "* * * * sat-sun"
+        "* * * * sat,sun"
     ],
     "prHourlyLimit": 0,
     "packageRules": [
