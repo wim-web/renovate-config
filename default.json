@@ -8,15 +8,5 @@
         "* 21-23 * * fri",
         "* * * * sat,sun"
     ],
-    "prHourlyLimit": 0,
-    "packageRules": [
-        {
-            "matchUpdateTypes": [
-                "minor",
-                "patch"
-            ],
-            "automerge": true,
-            "automergeStrategy": "squash"
-        }
-    ]
+    "prHourlyLimit": 0
 }
