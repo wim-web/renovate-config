@@ -2,7 +2,8 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "config:base",
-        "github>aquaproj/aqua-renovate-config#1.6.0"
+        "github>aquaproj/aqua-renovate-config#1.6.0",
+        ":timezone(Asia/Tokyo)"
     ],
     "schedule": [
         "* 21-23 * * fri",
@@ -11,12 +12,12 @@
     "prHourlyLimit": 0,
     "packageRules": [
         {
-            "matchUpdateTypes": [
-                "minor",
-                "patch"
+            "matchPackageNames": [
+                "aquaproj/aqua-registry"
             ],
-            "automerge": true,
-            "automergeStrategy": "squash"
+            "schedule": [
+                "* 21-23 * * fri"
+            ]
         }
     ]
 }

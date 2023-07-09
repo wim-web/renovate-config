@@ -2,17 +2,5 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "local>wim-web/renovate-config"
-    ],
-    "regexManagers": [
-        {
-            "fileMatch": [
-                "^default\\.json$"
-            ],
-            "matchStrings": [
-                "\"github>aquaproj/aqua-renovate-config#(?<currentValue>.*)\""
-            ],
-            "datasourceTemplate": "github-releases",
-            "depNameTemplate": "aquaproj/aqua-renovate-config"
-        }
     ]
 }
