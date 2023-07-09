@@ -19,5 +19,19 @@
                 "* 21-23 * * fri"
             ]
         }
+    ],
+    "regexManagers": [
+        {
+            "datasourceTemplate": "github-releases",
+            "depNameTemplate": "aquaproj/aqua-renovate-config",
+            "fileMatch": [
+                "^default\\.json$"
+            ],
+            "matchStrings": [
+                "\"github>aquaproj/aqua-renovate-config#(?<currentValue>[^\" \\n\\(]+)",
+                "\"github>aquaproj/aqua-renovate-config:.*#(?<currentValue>[^\" \\n\\(]+)",
+                "\"github>aquaproj/aqua-renovate-config/.*#(?<currentValue>[^\" \\n\\(]+)"
+            ]
+        }
     ]
 }
