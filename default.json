@@ -15,8 +15,8 @@
             "matchPackageNames": [
                 "aquaproj/aqua-registry"
             ],
-            "schedule": [
-                "* 21-23 * * fri"
+            "extends": [
+                "schedule:monthly"
             ]
         }
     ],
