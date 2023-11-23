@@ -7,18 +7,7 @@
         ":timezone(Asia/Tokyo)"
     ],
     "schedule": [
-        "* 21-23 * * fri",
-        "* * * * sat,sun"
+        "before 10am on the first day of the month"
     ],
-    "prHourlyLimit": 0,
-    "packageRules": [
-        {
-            "matchPackageNames": [
-                "aquaproj/aqua-registry"
-            ],
-            "extends": [
-                "schedule:monthly"
-            ]
-        }
-    ]
+    "prHourlyLimit": 0
 }
