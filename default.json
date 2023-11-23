@@ -3,6 +3,7 @@
     "extends": [
         "config:best-practices",
         "github>aquaproj/aqua-renovate-config#1.13.0",
+        "github>aquaproj/aqua-renovate-config:aqua-renovate-config#1.13.0(default\\.json)",
         ":timezone(Asia/Tokyo)"
     ],
     "schedule": [
@@ -17,20 +18,6 @@
             ],
             "extends": [
                 "schedule:monthly"
-            ]
-        }
-    ],
-    "regexManagers": [
-        {
-            "datasourceTemplate": "github-releases",
-            "depNameTemplate": "aquaproj/aqua-renovate-config",
-            "fileMatch": [
-                "^default\\.json$"
-            ],
-            "matchStrings": [
-                "\"github>aquaproj/aqua-renovate-config#(?<currentValue>[^\" \\n\\(]+)",
-                "\"github>aquaproj/aqua-renovate-config:.*#(?<currentValue>[^\" \\n\\(]+)",
-                "\"github>aquaproj/aqua-renovate-config/.*#(?<currentValue>[^\" \\n\\(]+)"
             ]
         }
     ]
