@@ -9,5 +9,6 @@
     "schedule": [
         "before 10am on the first day of the month"
     ],
-    "prHourlyLimit": 0
+    "prHourlyLimit": 0,
+    "prConcurrentLimit": 0
 }
