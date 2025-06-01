@@ -2,8 +2,8 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "config:best-practices",
-        "github>aquaproj/aqua-renovate-config#2.3.0",
-        "github>aquaproj/aqua-renovate-config:aqua-renovate-config#2.3.0(default\\.json)",
+        "github>aquaproj/aqua-renovate-config#2.8.1",
+        "github>aquaproj/aqua-renovate-config:aqua-renovate-config#2.8.1(default\\.json)",
         ":timezone(Asia/Tokyo)"
     ],
     "schedule": [
