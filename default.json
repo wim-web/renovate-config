@@ -4,10 +4,8 @@
         "config:best-practices",
         "github>aquaproj/aqua-renovate-config#2.3.0",
         "github>aquaproj/aqua-renovate-config:aqua-renovate-config#2.3.0(default\\.json)",
-        ":timezone(Asia/Tokyo)"
-    ],
-    "schedule": [
-        "before 10am on the first day of the month"
+        ":timezone(Asia/Tokyo)",
+        "schedule:daily"
     ],
     "prHourlyLimit": 0,
     "prConcurrentLimit": 0
