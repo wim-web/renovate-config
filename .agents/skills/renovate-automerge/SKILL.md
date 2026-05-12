@@ -110,6 +110,8 @@ description: このリポジトリの Renovate PR を調査し、repo固有ル�
 - マージしなかった Renovate PR には、通常コメントしない。
 - 人間確認が必要で、同じ調査結果を PR 上に残すと有用な場合だけコメントする。
 - コメントする場合は、調査した release notes / changelog、影響範囲、マージしなかった具体理由、人間に確認してほしい点を簡潔に含める。
+- 既に同等内容の comment がある場合は、重複コメントを投稿せず comment skipped として扱い、既存コメント URL を報告する。
+- マージしなかったが人間確認が必要な Renovate PR には、コメント投稿の有無に関係なく `renovate-needs-manual-review` を付ける。既に同等内容の comment がある場合も、重複コメントは投稿せず label は付ける。
 
 ## 禁止操作
 
