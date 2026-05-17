@@ -8,5 +8,15 @@
         "schedule:daily"
     ],
     "prHourlyLimit": 0,
-    "prConcurrentLimit": 0
+    "prConcurrentLimit": 0,
+    "packageRules": [
+        {
+            "matchDepNames": [
+                "aquaproj/aqua-registry"
+            ],
+            "extends": [
+                "schedule:monthly"
+            ]
+        }
+    ]
 }
