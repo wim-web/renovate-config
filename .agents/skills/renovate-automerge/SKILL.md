@@ -63,6 +63,7 @@ description: このリポジトリの Renovate PR を調査し、repo固有ル�
 - `default.json` または `renovate.json` の Renovate 設定更新で、patch/minor update か digest/pin update。
 - `.github/workflows/renovate_config_validate.yaml` の GitHub Actions 更新で、patch/minor update か digest/pin update。
 - 対象 dependency は、この repo で観測済みの `aquaproj/aqua-renovate-config`、`actions/checkout`、`rinchsan/renovate-config-validator`。
+- `aquaproj/aqua-renovate-config` の patch/minor update は、`default.json` / `renovate.json` 内の preset 参照バージョンだけを更新する PR なら自動マージしてよい。upstream の変更が個別 tool/package の manager 設定や allowedVersions の追加・削除に留まり、この repo 側の `config:best-practices`、`:timezone(Asia/Tokyo)`、`schedule:daily`、automerge、schedule、base branch、packageRules の意味を直接変えない場合は、preset の意味変更ブロックとして扱わない。
 - upstream release notes / changelog で breaking change、設定変更必須、runtime 要件変更、deprecated API の影響がないと確認できる。
 
 ## マージしてはいけないもの
@@ -72,7 +73,7 @@ description: このリポジトリの Renovate PR を調査し、repo固有ル�
 - PR author が `app/renovate` または `renovate[bot]` ではない。
 - base branch が `main` ではない。
 - major update。
-- `config:best-practices`、`schedule:daily`、`:timezone(Asia/Tokyo)` など Renovate preset の意味を変える可能性がある変更。
+- `config:best-practices`、`schedule:daily`、`:timezone(Asia/Tokyo)`、automerge、schedule、base branch、packageRules など、この repo が直接使う Renovate preset / policy の意味を変える可能性がある変更。ただし `aquaproj/aqua-renovate-config` の patch/minor update で、upstream の個別 tool/package 検出設定の追加・削除だけが release notes / changelog で確認できるものは、この禁止条件に含めない。
 - `default.json`、`renovate.json`、`.github/workflows/renovate_config_validate.yaml` 以外を変更する PR。
 - package manager manifest、lockfile、source code、Docker、infra、deploy、database migration を追加または変更する PR。
 - breaking changes、peer dependency変更、runtime要件変更、設定変更の可能性が残る PR。
