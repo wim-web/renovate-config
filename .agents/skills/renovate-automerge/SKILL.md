@@ -10,7 +10,7 @@ description: このリポジトリの Renovate PR を調査し、repo固有ル�
 ## 対象PR
 
 - 作成者が Renovate の open PR のみを対象にする。
-- このリポジトリで観測した Renovate author: `app/renovate`
+- このリポジトリで観測した Renovate PR author: `app/renovate`, `renovate[bot]`
 - base branch が `main` の PR のみを対象にする。
 - Dependabot や人間が作成した PR は対象外。
 
@@ -41,7 +41,7 @@ description: このリポジトリの Renovate PR を調査し、repo固有ル�
 
 対象 PR ごとに、必ずこの順序で調査してから判定する。
 
-1. `gh pr list --state open --author app/renovate --json number,title,author,baseRefName,headRefName,isDraft,url` で対象候補を確認する。
+1. `gh pr list --state open --json number,title,author,baseRefName,headRefName,isDraft,url` で open PR を確認し、author が `app/renovate` または `renovate[bot]` の PR だけを対象候補にする。
 2. `gh pr view PR番号 --json title,body,author,baseRefName,headRefName,isDraft,mergeable,reviewDecision,files,statusCheckRollup,commits,reviews,comments,url` で PR metadata を確認する。
 3. `gh pr diff PR番号 --patch` で差分を確認する。
 4. Renovate PR 本文の release notes / changelog / compatibility notes を読む。
@@ -53,7 +53,7 @@ description: このリポジトリの Renovate PR を調査し、repo固有ル�
 
 以下をすべて満たす PR だけ自動マージしてよい。
 
-- 作成者が `app/renovate`。
+- PR author が `app/renovate` または `renovate[bot]`。
 - base branch が `main`。
 - draft ではない。
 - merge conflict がない。
@@ -69,7 +69,7 @@ description: このリポジトリの Renovate PR を調査し、repo固有ル�
 
 以下のいずれかに該当する PR はマージしない。必要なら理由を報告する。
 
-- 作成者が `app/renovate` ではない。
+- PR author が `app/renovate` または `renovate[bot]` ではない。
 - base branch が `main` ではない。
 - major update。
 - `config:best-practices`、`schedule:daily`、`:timezone(Asia/Tokyo)` など Renovate preset の意味を変える可能性がある変更。
