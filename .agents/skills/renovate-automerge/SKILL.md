@@ -57,7 +57,7 @@ description: このリポジトリの Renovate PR を調査し、repo固有ル�
 - base branch が `main`。
 - draft ではない。
 - merge conflict がない。
-- GitHub checks がすべて成功している。
+- GitHub checks が報告されている場合はすべて成功している。check が一つも報告されていない場合は、この repo では required check がないものとして扱ってよい。
 - requested changes や未解決の人間 review comment がない。
 - changed files が `default.json`、`renovate.json`、`.github/workflows/renovate_config_validate.yaml` の範囲に収まる。
 - `default.json` または `renovate.json` の Renovate 設定更新で、patch/minor update か digest/pin update。
@@ -78,15 +78,15 @@ description: このリポジトリの Renovate PR を調査し、repo固有ル�
 - package manager manifest、lockfile、source code、Docker、infra、deploy、database migration を追加または変更する PR。
 - breaking changes、peer dependency変更、runtime要件変更、設定変更の可能性が残る PR。
 - changelog / release notes / migration guide を確認できず、影響範囲を判断できない PR。
-- failed / pending / missing checks がある PR。
+- failed / pending checks がある PR。check が一つも報告されていないだけの PR は missing checks として扱わない。
 - requested changes や未解決の人間コメントがある PR。
 - merge conflict がある PR。
 
 ## check の扱い
 
-- `statusCheckRollup` を確認し、すべて成功している場合だけマージしてよい。
-- pending、failed、cancelled、skipped、timed out、missing の check がある場合はマージしない。
-- check が一つも報告されていない PR は missing checks として扱い、マージしない。
+- `statusCheckRollup` を確認し、報告されている check がすべて成功している場合はマージしてよい。
+- pending、failed、cancelled、skipped、timed out の check がある場合はマージしない。
+- check が一つも報告されていない PR は、この repo では required check がないものとして扱ってよい。
 - branch protection や required check は推測しない。
 
 ## マージ方法
