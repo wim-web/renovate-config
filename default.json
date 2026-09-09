@@ -9,7 +9,56 @@
     ],
     "prHourlyLimit": 0,
     "prConcurrentLimit": 0,
+    "addLabels": [
+        "renovate"
+    ],
     "packageRules": [
+        {
+            "matchManagers": [
+                "npm"
+            ],
+            "matchDepTypes": [
+                "dependencies"
+            ],
+            "addLabels": [
+                "dependency"
+            ]
+        },
+        {
+            "matchManagers": [
+                "npm"
+            ],
+            "matchDepTypes": [
+                "devDependencies"
+            ],
+            "addLabels": [
+                "dev-dependency"
+            ]
+        },
+        {
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "addLabels": [
+                "major"
+            ]
+        },
+        {
+            "matchUpdateTypes": [
+                "minor"
+            ],
+            "addLabels": [
+                "minor"
+            ]
+        },
+        {
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "addLabels": [
+                "patch"
+            ]
+        },
         {
             "matchDepNames": [
                 "aquaproj/aqua-registry"
