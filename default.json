@@ -2,6 +2,7 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "config:best-practices",
+        "helpers:pinGitHubActionDigestsToSemver",
         "github>aquaproj/aqua-renovate-config#2.13.0",
         "github>aquaproj/aqua-renovate-config:aqua-renovate-config#2.13.0(default\\.json)",
         ":timezone(Asia/Tokyo)",
