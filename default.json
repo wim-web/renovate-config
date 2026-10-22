@@ -15,8 +15,11 @@
     ],
     "vulnerabilityAlerts": {
         "enabled": true,
+        "rangeStrategy": "pin",
+        "vulnerabilityFixStrategy": "lowest",
         "addLabels": [
-            "security"
+            "security",
+            "CVE"
         ]
     },
     "packageRules": [
