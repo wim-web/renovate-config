@@ -16,11 +16,7 @@
     "vulnerabilityAlerts": {
         "enabled": true,
         "rangeStrategy": "pin",
-        "vulnerabilityFixStrategy": "lowest",
-        "addLabels": [
-            "security",
-            "CVE"
-        ]
+        "vulnerabilityFixStrategy": "lowest"
     },
     "packageRules": [
         {
@@ -75,6 +71,15 @@
             ],
             "extends": [
                 "schedule:monthly"
+            ]
+        },
+        {
+            "matchJsonata": [
+                "isVulnerabilityAlert = true"
+            ],
+            "addLabels": [
+                "security",
+                "CVE"
             ]
         }
     ]
