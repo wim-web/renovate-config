@@ -13,6 +13,15 @@
     "addLabels": [
         "renovate"
     ],
+    "vulnerabilityAlerts": {
+        "enabled": true,
+        "rangeStrategy": "pin",
+        "vulnerabilityFixStrategy": "lowest",
+        "addLabels": [
+            "security",
+            "CVE"
+        ]
+    },
     "packageRules": [
         {
             "matchManagers": [
