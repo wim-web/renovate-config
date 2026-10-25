@@ -3,8 +3,8 @@
     "extends": [
         "config:best-practices",
         "helpers:pinGitHubActionDigestsToSemver",
-        "github>aquaproj/aqua-renovate-config#2.13.0",
-        "github>aquaproj/aqua-renovate-config:aqua-renovate-config#2.13.0(default\\.json)",
+        "github>aquaproj/aqua-renovate-config#2.14.0",
+        "github>aquaproj/aqua-renovate-config:aqua-renovate-config#2.14.0(default\\.json)",
         ":timezone(Asia/Tokyo)",
         "schedule:daily"
     ],
